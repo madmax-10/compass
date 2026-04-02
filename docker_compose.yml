@@ -1,0 +1,18 @@
+services:
+  backend:
+    image: ${BACKEND_IMAGE:-oholala/wander-backend:latest}
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: ${DJANGO_SETTINGS_MODULE:-api.settings}
+    restart: unless-stopped
+
+  chatbot-ui:
+    image: ${CHATBOT_UI_IMAGE:-oholala/wander-frontend:latest}
+    depends_on:
+      - backend
+    ports:
+      - "${CHATBOT_UI_PORT:-5173}:5173"
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://backend:8000}
+    restart: unless-stopped
