@@ -1,0 +1,32 @@
+{
+  "key": "PM-100_TGBDHqU_q1_random_forest",
+  "file_name": "/app/data/PM-100.parquet",
+  "dropped_columns": [
+    "group_id",
+    "job_id",
+    "user_id"
+  ],
+  "query_type": "recommendation",
+  "target": {
+    "target_0": "0.0 <= cpu_power_consumption <= 82.23711711711712"
+  },
+  "user_constraints": {
+    "user_rule_0": "job_state == COMPLETED",
+    "user_rule_1": "8 <= num_gpus_req <= 8"
+  },
+  "query_features": [
+    "num_cores_req",
+    "num_cores_alloc",
+    "num_nodes_req",
+    "num_nodes_alloc",
+    "num_tasks"
+  ],
+  "samples": [],
+  "domain_constraints": [
+    "num_cores_req <= 32 * num_nodes_req",
+    "mem_req <= 256 * num_nodes_req",
+    "num_gpus_req <= 4 * num_nodes_req"
+  ],
+  "is_subset_sampling_enabled": true,
+  "model_name": "random_forest"
+}
