@@ -1,70 +1,86 @@
-# Compass1 — Docker Compose
+# Anonymous Submission — Reproducibility (Docker Compose)
 
-This stack runs the **Wander** backend (Django) and **chatbot UI** (Vite) from published images.
+This repository provides a containerized setup to reproduce the experimental system using Docker Compose.
 
-## Prerequisites
+Datasets are located in the `data/` directory, and configuration files are in `config/`.
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/) v2+ (`docker compose`)
+## 📦 Prerequisites
 
-## Quick start
+* **Docker**
+* **Docker Compose** (v2+, use `docker compose`)
 
-From this directory:
+## 🚀 Quick Start
+
+From the root directory, run:
 
 ```bash
 docker compose -f docker_compose.yml up -d
 ```
 
-Then open:
+After startup, access the services:
 
-| Service    | URL                     | Default host port |
-| ---------- | ----------------------- | ----------------- |
-| Chatbot UI | http://localhost:5173   | `5173`            |
-| Backend    | http://localhost:8000   | `8000`            |
+| Service | URL | Default Port |
+| :--- | :--- | :--- |
+| **Frontend UI** | `http://localhost:5173` | `5173` |
+| **Backend API** | `http://localhost:8000` | `8000` |
 
-Stop and remove containers:
+## 🛑 Stopping Services
 
 ```bash
 docker compose -f docker_compose.yml down
 ```
 
-View logs:
+## 📜 Viewing Logs
 
 ```bash
 docker compose -f docker_compose.yml logs -f
 ```
 
-## Environment variables
+## ⚙️ Configuration
 
-Optional overrides (shell, `.env` in the same directory as the compose file, or `export` before `up`):
+Environment variables can be set via shell export, a `.env` file, or inline before execution.
 
-| Variable              | Default                         | Purpose                          |
-| --------------------- | ------------------------------- | -------------------------------- |
-| `BACKEND_IMAGE`       | `oholala/wander-backend:latest` | Backend container image          |
-| `CHATBOT_UI_IMAGE`    | `oholala/wander-frontend:latest`| Frontend container image         |
-| `BACKEND_PORT`        | `8000`                          | Host port mapped to backend      |
-| `CHATBOT_UI_PORT`     | `5173`                          | Host port mapped to chatbot UI   |
-| `DJANGO_SETTINGS_MODULE` | `api.settings`              | Django settings module           |
-| `VITE_API_URL`        | `http://backend:8000`           | API base URL seen by the UI app  |
+| Variable | Default Value | Description |
+| :--- | :--- | :--- |
+| `BACKEND_IMAGE` | `backend:latest` | Backend container image |
+| `CHATBOT_UI_IMAGE` | `frontend:latest`| Frontend container image |
+| `BACKEND_PORT` | `8000` | Host port for backend |
+| `CHATBOT_UI_PORT` | `5173` | Host port for frontend |
+| `DJANGO_SETTINGS_MODULE`| `api.settings` | Backend configuration module |
+| `VITE_API_URL` | `http://backend:8000`| API endpoint for frontend |
 
-Example with custom ports:
+**Example (custom ports):**
 
 ```bash
 BACKEND_PORT=8080 CHATBOT_UI_PORT=3000 docker compose -f docker_compose.yml up -d
 ```
 
-### API URL from the browser
+## 🌐 API Configuration Note
 
-The default `VITE_API_URL` uses the Docker service name `backend`, which resolves **inside** the compose network. If the UI makes requests **from your browser** and those requests fail, point the UI at the host instead, for example:
+> **Note:** By default, the frontend connects to `http://backend:8000`, which works internally inside the Docker network. 
+> 
+> If accessing from a local host browser and requests fail, explicitly map the URL:
 
 ```bash
 VITE_API_URL=http://localhost:8000 docker compose -f docker_compose.yml up -d
 ```
+*(Adjust the port in the URL if `BACKEND_PORT` was changed, e.g., to `8080`)*.
 
-(Use the same port you mapped for the backend, e.g. `8080` if you set `BACKEND_PORT=8080`.)
+## 📁 Repository Structure
 
-Whether you need this depends on how the frontend image is built (e.g. server-side proxy vs direct browser calls).
+```text
+.
+├── data/                  # Datasets required for execution
+├── config/                # System configuration files
+└── docker_compose.yml     # Docker service definitions
+```
 
-## File reference
+## 🧪 Reproducibility Notes
 
-- `docker_compose.yml` — defines `backend` and `chatbot-ui` services with `restart: unless-stopped`.
+* All required components are fully containerized.
+* Default settings are mapped to reproduce the exact experimental setup.
+* **Requirement:** Ensure all necessary datasets are populated in `data/` before executing the `up` command.
+
+## 🔒 Anonymity Notice
+
+This repository is strictly provided for **double-blind review**. All identifying information, author names, and institutional affiliations have been removed. They will be restored in the public release repository upon acceptance.
