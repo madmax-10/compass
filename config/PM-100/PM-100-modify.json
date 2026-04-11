@@ -1,0 +1,45 @@
+{
+  "key": "PM-100_q2_what_if",
+  "file_name": "/app/data/PM-100.parquet",
+  "is_subset_sampling_enabled": false,
+  "task_type": "regression",
+  "dropped_columns": [
+    "group_id",
+    "job_id",
+    "user_id"
+  ],
+  "query_type": "modify",
+  "target": {
+    "target_1": "1<=node_power_consumption<=2346",
+    "target_2": "1<=cpu_power_consumption<=176.4",
+    "target_3": "1<=mem_power_consumption<=454.2"
+  },
+  "user_constraints": {},
+  "query_features": [],
+  "samples": [
+    {
+      "cores_per_task": 1.0,
+      "job_state": 1.0,
+      "num_cores_req": 32.0,
+      "num_cores_alloc": 32.0,
+      "num_nodes_req": 1.0,
+      "num_nodes_alloc": 1.0,
+      "num_tasks": 32.0,
+      "partitxon": 1.0,
+      "run_time": 14071.0,
+      "time_limit": 480.0,
+      "num_gpus_req": 2.0,
+      "num_gpus_alloc": 2.0,
+      "mem_req": 224.0,
+      "mem_alloc": 224.0,
+      "user_id": 1584.0,
+      "job_id": 2588165.0,
+      "group_id": 25200.0,
+      "mem_power_consumption": 27332.0,
+      "cpu_power_consumption": 46416.0
+    }
+  ],
+  "model_name": "random_forest",
+  "domain_constraints": []
+}
+

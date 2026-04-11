@@ -1,0 +1,33 @@
+{
+  "key": "PM-100_recommendation",
+  "file_name": "/app/data/PM-100.parquet",
+  "is_subset_sampling_enabled": true,
+  "task_type": "regression",
+  "dropped_columns": [
+    "partition",
+    "group_id",
+    "job_id",
+    "user_id"
+  ],
+  "query_type": "recommendation",
+  "target": {
+    "target_1": "20<=node_power_consumption<=1000",
+    "target_2": "10<=cpu_power_consumption<=256",
+    "target_3": "28<=mem_power_consumption<=150"
+  },
+  "user_constraints": {
+    "user_rule_0": "num_gpus_req == 4", 
+    "user_rule_1": "job_state == COMPLETED"
+  },
+  "query_features": [
+    "cores_per_task",
+    "num_cores_req",
+    "num_nodes_req",
+    "mem_req",
+    "time_limit"
+  ],
+  "samples": [],
+  "model_name": "random_forest",
+  "domain_constraints": []
+}
+

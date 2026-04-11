@@ -1,32 +1,20 @@
 {
-  "key": "monet_modify_query_0",
-  "file_name": "/work2/09339/banooqa/datasets/monet.csv",
+  "key": "monet_recommendation_query_0",
+  "file_name": "/app/data/monet.csv",
   "is_subset_sampling_enabled": true,
   "task_type": "regression",
   "dropped_columns": [
     "Time"
   ],
-  "number_of_cfs": 5,
+  "number_of_cfs": 20,
   "algorithm": "genetic",
-  "query_type": "modify",
-  "proximity_weight": 0.5,
-  "diversity_weight": 0.5,
-  "domain_constraint_weight": 1,
+  "query_type": "recommendation",
   "target": {
-    "target_1": "0 <= Z+_SAMPLE_GEMINI_LINK_CREDIT_STALL (% x1e6) <= 30228.8",
-    "target_2": "0 <= Z+_SAMPLE_GEMINI_LINK_INQ_STALL (% x1e6) <= 43089.6",
-    "target_3": "0 <= Z+_SAMPLE_GEMINI_LINK_USED_BW (% x1e6) <= 2564616.8"
+    "target_1": "574904.0 <= X+_SAMPLE_GEMINI_LINK_INQ_STALL (% x1e6) <= 862356.0",
+    "target_2": "8357.6 <= X+_SAMPLE_GEMINI_LINK_CREDIT_STALL (% x1e6) <= 12536.4",
+    "target_3": "5387272.0 <= X+_SAMPLE_GEMINI_LINK_USED_BW (% x1e6) <= 8080908.0"
   },
-  "user_constraints": {
-    "constraint_1": "X+_SAMPLE_GEMINI_LINK_CREDIT_STALL (% x1e6) == 10447.0",
-    "constraint_2": "X+_SAMPLE_GEMINI_LINK_INQ_STALL (% x1e6) == 718630.0"
-  },
-  "domain_constraints": [
-    "nettopo_mesh_coord_X >= 0",
-    "nettopo_mesh_coord_Y >= 0",
-    "nettopo_mesh_coord_Z >= 0"
-  ],
-  "fixed_columns": {},
+  "user_constraints": {},
   "query_features": [
     "nettopo_mesh_coord_Z",
     "nettopo_mesh_coord_Y",
@@ -57,6 +45,7 @@
       "nettopo_mesh_coord_X": 10.0
     }
   ],
-  "should_save_cfs": false,
-  "should_optuna_use": true
+  "proximity_weight": 0.5,
+  "diversity_weight": 0.5,
+  "domain_constraint_weight": 1
 }
