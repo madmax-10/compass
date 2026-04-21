@@ -1,0 +1,31 @@
+{
+  "key": "comd_reco",
+  "file_name": "sc2026/datasets/2019-sc-perfVar-dataset/comd_perf_variation.csv",
+  "is_subset_sampling_enabled": false,
+  "task_type": "regression",
+  "dropped_columns": [
+    "ipath_0",
+    "ipath_1",
+    "avg_runtime"
+  ],
+  "should_optuna_use": false, 
+  "query_type": "recommendation",
+  "target": {
+    "target_1": "5.5<=perf_variation<=11.718",
+    "target_2": "0<=runtime<=38.3922"
+  },
+  "user_constraints": {},
+  "query_features": [
+    "bw_level",
+    "power_cap",
+    "thread_count"
+  ],
+  "samples": [],
+  "domain_constraints": [
+    "node_count % 2 == 0",
+    "thread_count % 2 == 0",
+    "power_cap in [64, 80, 115]",
+    "bw_level in [1, 2, 3, 4, 5]" 
+  ]
+}
+

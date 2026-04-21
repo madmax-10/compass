@@ -1,0 +1,42 @@
+{
+  "key": "ft_modify",
+  "file_name": "sc2026/datasets/2019-sc-perfVar-dataset/ft_perf_variation.csv",
+  "is_subset_sampling_enabled": false,
+  "task_type": "regression",
+  "dropped_columns": [
+    "ipath_0",
+    "ipath_1",
+    "avg_runtime"
+  ],
+  "query_type": "reconfigure",
+  "target": {
+    "target_1": "0<=perf_variation<=5.642467"
+  },
+  "user_constraints": {
+    "user_rule_1": "app == ft"
+  },
+  "query_features": [
+     "algorithm"
+  ],
+  "samples": [
+    {
+      "algorithm": "rand",
+      "app": "ft",
+      "bw_level": 2,
+      "ipath_0": 1,
+      "ipath_1": 0,
+      "node_count": 2048,
+      "power_cap": 80,
+      "runtime": 25.83,
+      "thread_count": 20,
+      "perf_variation": 8.323484,
+      "avg_runtime": 34.153484
+    }
+  ],
+  "domain_constraints": [
+     "node_count % 2 == 0", 
+     "thread_count % 2 == 0" 
+   ]
+}
+
+
