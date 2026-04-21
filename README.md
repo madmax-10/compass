@@ -9,6 +9,18 @@ Datasets are located in the `data/` directory, and configuration files are in `c
 * **Docker**
 * **Docker Compose** (v2+, use `docker compose`)
 
+### Install Docker
+
+1. Download Docker Desktop from the official page: https://www.docker.com/products/docker-desktop/
+2. Install Docker Desktop for your OS (macOS, Windows, or Linux).
+3. Start Docker Desktop and wait until Docker is running.
+4. Verify installation:
+
+```bash
+docker --version
+docker compose version
+```
+
 ## 🚀 Quick Start
 
 From the root directory, run:
