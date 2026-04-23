@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ${BACKEND_IMAGE:-oholala/wander-backend:latest}
+    image: ${BACKEND_IMAGE:-oholala/compass-backend:latest}
     volumes:
       - ./data:/app/data:ro
     ports:
@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
 
   chatbot-ui:
-    image: ${CHATBOT_UI_IMAGE:-oholala/wander-frontend:latest}
+    image: ${CHATBOT_UI_IMAGE:-oholala/compass-frontend:latest}
     depends_on:
       - backend
     ports:
