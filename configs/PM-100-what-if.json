@@ -1,6 +1,6 @@
 {
   "key": "PM-100_q2_what_if",
-  "file_name": "sc2026/datasets/PM-100.parquet",
+  "file_name": "app/data/PM-100.parquet",
   "is_subset_sampling_enabled": false,
   "task_type": "regression",
   "dropped_columns": [

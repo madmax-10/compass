@@ -1,6 +1,6 @@
 {
   "key": "PM-100_recommendation",
-  "file_name": "sc2026/datasets/PM-100.parquet",
+  "file_name": "app/data/PM-100.parquet",
   "dropped_columns": [
     "group_id",
     "job_id",
