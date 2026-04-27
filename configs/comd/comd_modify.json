@@ -1,6 +1,6 @@
 {
   "key": "comd_modify",
-  "file_name": "app/data/sc19_perf_variation.csv",
+  "file_name": "app/data/2019-sc-perfVar-dataset/sc19_perf_variation.csv",
   "is_subset_sampling_enabled": false,
   "task_type": "regression",
   "dropped_columns": [

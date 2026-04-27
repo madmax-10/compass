@@ -1,6 +1,6 @@
 {
-  "key": "comd_reco",
-  "file_name": "app/data/comd_perf_variation.csv",
+  "key": "ft_reco",
+  "file_name": "app/data/2019-sc-perfVar-dataset/ft_perf_variation.csv",
   "is_subset_sampling_enabled": false,
   "task_type": "regression",
   "dropped_columns": [
@@ -8,24 +8,26 @@
     "ipath_1",
     "avg_runtime"
   ],
-  "should_optuna_use": false, 
   "query_type": "recommendation",
   "target": {
-    "target_1": "5.5<=perf_variation<=11.718",
-    "target_2": "0<=runtime<=38.3922"
+    "target_1": "0.089933<=perf_variation<=5.642467",
+    "target_2": "9.67<=runtime<=26.655000"
   },
   "user_constraints": {},
   "query_features": [
     "bw_level",
     "power_cap",
-    "thread_count"
+    "thread_count",
+    "runtime"
   ],
   "samples": [],
   "domain_constraints": [
     "node_count % 2 == 0",
     "thread_count % 2 == 0",
     "power_cap in [64, 80, 115]",
-    "bw_level in [1, 2, 3, 4, 5]" 
-  ]
-}
+    "bw_level in [1, 2, 3, 4, 5]",
+    "node_count >= 2", 
+    "thread_count >= 2"
+   ]
 
+}

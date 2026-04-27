@@ -17,7 +17,7 @@
   },
   "user_constraints": { 
     "user_rule_1": "job_state == COMPLETED" ,
-    "user_rule_2: num_gpus_req == 2"
+    "user_rule_2": "num_gpus_req == 2"
   },
   "query_features": [
      "cores_per_task",
