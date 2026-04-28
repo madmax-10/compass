@@ -2,7 +2,7 @@ services:
   backend:
     image: ${BACKEND_IMAGE:-oholala/compass-backend:latest}
     volumes:
-      - ./data:/app/data:ro
+      - ./sc2026/datasets:/app/data:ro
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     environment:
