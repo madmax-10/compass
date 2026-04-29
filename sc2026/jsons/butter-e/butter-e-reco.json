@@ -1,6 +1,6 @@
 {
   "key": "butter-e_rec",
-  "file_name": "app/data/butter-e.csv",
+  "file_name": "/app/data/butter-e.csv",
   "task_type": "regression",
   "dropped_columns": [
     "run_id",

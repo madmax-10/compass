@@ -1,6 +1,6 @@
 {
   "key": "PM-100-modify",
-  "file_name": "app/data/PM-100.parquet",
+  "file_name": "/app/data/PM-100.parquet",
   "is_subset_sampling_enabled": true,
   "task_type": "regression",
   "dropped_columns": [

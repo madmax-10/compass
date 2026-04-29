@@ -1,6 +1,6 @@
 {
   "key": "comd_reco",
-  "file_name": "app/data/2019-sc-perfVar-dataset/comd_perf_variation.csv",
+  "file_name": "/app/data/2019-sc-perfVar-dataset/comd_perf_variation.csv",
   "is_subset_sampling_enabled": false,
   "task_type": "regression",
   "dropped_columns": [

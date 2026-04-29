@@ -1,6 +1,6 @@
 {
   "key": "butter-e_what_if",
-  "file_name": "app/data/butter-e.csv",
+  "file_name": "/app/data/butter-e.csv",
   "is_subset_sampling_enabled": true,
   "task_type": "regression",
   "dropped_columns": [
